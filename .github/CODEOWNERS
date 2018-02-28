@@ -1,2 +1,5 @@
-LICENSE			@lukebaker
-.github/CODEOWNERS	@lukebaker
+.travis.yml             @lukebaker
+.travis/                @lukebaker
+CODEOWNERS              @lukebaker
+Gemfile                 @lukebaker
+Gemfile.lock            @lukebaker
