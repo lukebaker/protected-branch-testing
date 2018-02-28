@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+exit(0) if ['false', nil].include? ENV['TRAVIS_PULL_REQUEST']
 require 'rubygems'
 require 'bundler'
 require 'yaml'
