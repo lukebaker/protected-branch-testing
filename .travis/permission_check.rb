@@ -13,6 +13,7 @@ headers = {
 }
 pull_request_url = "https://api.github.com/repos/#{ENV['TRAVIS_REPO_SLUG']}/pulls/#{ENV['TRAVIS_PULL_REQUEST']}"
 response = HTTParty.get(pull_request_url, headers: headers, format: :json)
+puts response.inspect
 creator = response['user']['login']
 creator_perms = permissions[creator]
 if creator_perms == nil
