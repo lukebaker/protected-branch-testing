@@ -1,5 +1,6 @@
 lukebaker-travis:
   - README.md
   - newpath/
+  - "*"
 lukebaker:
   - "*"
