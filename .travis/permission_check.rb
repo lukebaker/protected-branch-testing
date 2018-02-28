@@ -12,9 +12,16 @@ headers = {
   'Accept' => 'application/vnd.github.v3+json',
   'User-Agent' => 'Ruby permission check',
 }
+auth = {
+  username: "compsocialscience-bot",
+  password: ENV['MY_GITHUB_TOKEN'],
+}
 pull_request_url = "https://api.github.com/repos/#{ENV['TRAVIS_REPO_SLUG']}/pulls/#{ENV['TRAVIS_PULL_REQUEST']}"
-response = HTTParty.get(pull_request_url, headers: headers, format: :json)
-puts response.inspect
+response = HTTParty.get(pull_request_url, headers: headers, format: :json, basic_auth: auth)
+
+body = { event: "APPROVE" }
+HTTParty.post("#{pull_request_url}/reviews", headers: headers, basic_auth: auth, format: :json, body: body.to_json)
+
 creator = response['user']['login']
 creator_perms = permissions[creator]
 if creator_perms == nil
