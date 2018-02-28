@@ -1,8 +1,5 @@
 lukebaker-travis:
-  - LICENSE
-  - bar
+  - README.md
+  - newpath/
 lukebaker:
   - "*"
-blah:
-  - boo
-  - blah
