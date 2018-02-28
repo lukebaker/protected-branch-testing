@@ -1,0 +1,8 @@
+lukebaker-travis:
+  - LICENSE
+  - bar
+lukebaker:
+  - "*"
+blah:
+  - boo
+  - blah

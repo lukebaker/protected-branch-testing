@@ -1,6 +1,6 @@
+env:
+  global:
+    - secure: "L9mdGPF69QRU12AMTloj9oAZBF4dpb0NaongyotI9YogIvycgwZQfwl2iR30kKxk0PPGry9NJY7aQRlXHmTmMFeXZWl/qs7Br4MBAMtM/WU/PiIKTrW469FSd3WD+fX9+RTNJpBAyMBTeYcoV0U9NNcfFdNqSi72q0MIiTjIUVlCCvdkHCRhdViCJdJDSu7waJyS8IVQgNkwAkyTI/Q/d1vtKhtfe/HgejNQ6FrcIKs4KfCagAxWe/NlLlgrk+9ePFCZJgDgGBla/xfNTVXECzsnuCdGKWVkfzCSWt2v4v0dIaWdqHsu/Kzicme+FflrdM4cYZUyDew7k6r/Diyxh6KC7wcaLcfqE/Lp7fuLZN78dvvBpcZKRZHldVSj0eXahZnrjJWt0TCvxAxLdqkBU1T1VxeS0xspIiplZtxiDJ4i0fIagX8v+RlP4TrgmWdfr94aD6ObQsRxziYRgapag1k+eK2ywmsn5Vt+jUOmWAv5xj/p47ANypUHJpgyxD9S4bdPwiHqnpN3beTfa6O6Fxj+b6ibL+rV1kldXOGj87HByXiYyn3dCUZXwm6peT+Tjou06NOnXfHllTFOc3f98KVisyUIbobB/uA7IfTusQ8eNZGc29XUZlwovrHQcZ/rWWEmTNrqmO0lyoYU+Hce7/FPgyiCzcqzHwkFTL2teJA="
 language: ruby
 cache: bundler
-script:
-  - env
-  - curl -H 'Accept: application/vnd.github.v3+json' https://api.github.com/repos/$TRAVIS_REPO_SLUG/pulls/$TRAVIS_PULL_REQUEST
-  - git diff --name-only HEAD...$TRAVIS_BRANCH
+script: ./.travis/permission_check.rb
