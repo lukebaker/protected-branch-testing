@@ -1,5 +1,7 @@
 lukebaker-travis:
   - README.md
   - newpath/
+compsocialscience-bot:
+  - "*"
 lukebaker:
   - "*"
